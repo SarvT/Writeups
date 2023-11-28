@@ -57,7 +57,8 @@ Contributions are welcome! Feel free to open issues or pull requests.
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
+```
 Feel free to customize the README to better suit your project. Add more details about the features, provide a detailed guide on how to use the application, and include any specific instructions or requirements. Additionally, replace the placeholder image link with your application's logo or a relevant image.
 
 Remember to update the installation instructions, contributing guidelines, and license information according to your project's specifics. This README is designed to make a strong impression and provide comprehensive information about your Writeups Application.
+```
