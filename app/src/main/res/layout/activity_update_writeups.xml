@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddWriteupsActivity"
+    tools:context=".UpdateWriteupsActivity"
     android:padding="18dp">
 
     <EditText
-        android:id="@+id/writeUp"
+        android:id="@+id/updateWriteUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="121dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/authorName"
+        android:id="@+id/updateAuthorName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -29,10 +29,10 @@
         android:hint="Author"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/writeUp" />
+        app:layout_constraintTop_toBottomOf="@+id/updateWriteUp" />
 
     <EditText
-        android:id="@+id/title"
+        android:id="@+id/updateTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -41,15 +41,24 @@
         android:hint="Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorName" />
+        app:layout_constraintTop_toBottomOf="@+id/updateAuthorName" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
+        android:id="@+id/updateButton"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Submit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/updateTitle" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

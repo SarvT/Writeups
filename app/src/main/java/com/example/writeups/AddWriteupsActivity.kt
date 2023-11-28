@@ -17,12 +17,13 @@ class AddWriteupsActivity : AppCompatActivity() {
 
         val write_up = findViewById<EditText>(R.id.writeUp)
         val author = findViewById<EditText>(R.id.authorName)
+    val title = findViewById<EditText>(R.id.title)
         val button = findViewById<Button>(R.id.button)
 
     val writeDBHelper = WriteDBHelper(this)
 
     button.setOnClickListener {
-        writeDBHelper.addData(author.text.toString().trim(), write_up.text.toString().trim())
+        writeDBHelper.addData(author.text.toString().trim(), write_up.text.toString().trim(), title.text.toString().trim())
     }
 
     }

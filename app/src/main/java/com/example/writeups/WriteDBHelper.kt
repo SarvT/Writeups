@@ -13,7 +13,7 @@ class WriteDBHelper(
 
 //    private val context:Context = context
     override fun onCreate(db: SQLiteDatabase?) {
-        val query = "CREATE TABLE ${TABLE_NAME} (${COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT, ${COLUMN_TITLE} TEXT, ${COLUMN_AUTHOR} TEXT);"
+        val query = "CREATE TABLE ${TABLE_NAME} (${COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT, ${COLUMN_TITLE} TEXT, ${COLUMN_WRITEUP} TEXT, ${COLUMN_AUTHOR} TEXT);"
         db?.execSQL(query)
     }
 
@@ -22,16 +22,17 @@ class WriteDBHelper(
         onCreate(db)
     }
 
-    fun addData(author_name:String, writeUp:String){
+    fun addData(author_name:String, writeUp:String, title:String){
         val db:SQLiteDatabase = this.writableDatabase
         val cv=ContentValues()
-        cv.put(COLUMN_TITLE, writeUp)
+        cv.put(COLUMN_TITLE, title)
+        cv.put(COLUMN_WRITEUP, writeUp)
         cv.put(COLUMN_AUTHOR, author_name)
         val result = db.insert(TABLE_NAME, null, cv).toString()
         if(result=="-1"){
             Log.d("add operation", "Unsuccessful operation!")
         } else {
-            Log.d("add operation", "Successfully added info!")
+            Log.d("add operation", "Successful operation!!")
         }
     }
 
@@ -46,6 +47,36 @@ class WriteDBHelper(
         return cursor
     }
 
+    fun updateData(id:String,author_name:String, writeUp:String, title:String){
+        val db = this.writableDatabase
+        val cv=ContentValues()
+        cv.put(COLUMN_TITLE, title)
+        cv.put(COLUMN_WRITEUP, writeUp)
+        cv.put(COLUMN_AUTHOR, author_name)
+
+        val result = db.update(TABLE_NAME,cv, "_id=?",  arrayOf(id)).toString()
+        if(result=="-1"){
+            Log.d("update operation", "Unsuccessful operation!")
+        } else {
+            Log.d("update operation", "Successful operation!!")
+    }
+
+    }
+    fun deleteOneItem(id:String){
+        val db = this.writableDatabase
+        val result = db.delete(TABLE_NAME, "_id=?", arrayOf(id)).toString()
+        if(result=="-1"){
+            Log.d("delete operation", "Unsuccessful operation!")
+        } else {
+            Log.d("delete operation", "Successful operation!")
+        }
+    }
+    fun deleteAllData(){
+        val db = this.writableDatabase
+        db.execSQL("DELETE FROM ${TABLE_NAME}")
+    }
+
+
 companion object{
 
     private final val DATABASE_NAME = "Writeups.db"
@@ -54,6 +85,7 @@ companion object{
     private final val TABLE_NAME = "articles"
     private final val COLUMN_ID = "_id"
     private final val COLUMN_TITLE = "article_title"
+    private final val COLUMN_WRITEUP = "article_writeup"
     private final val COLUMN_AUTHOR = "article_author"
 }
 }
