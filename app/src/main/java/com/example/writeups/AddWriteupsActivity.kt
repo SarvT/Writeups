@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import com.example.writeups.databinding.ActivityMainBinding
 
 class AddWriteupsActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class AddWriteupsActivity : AppCompatActivity() {
         val write_up = findViewById<EditText>(R.id.writeUp)
         val author = findViewById<EditText>(R.id.authorName)
     val title = findViewById<EditText>(R.id.title)
-        val button = findViewById<Button>(R.id.button)
+        val button = findViewById<ImageButton>(R.id.button)
 
     val writeDBHelper = WriteDBHelper(this)
 

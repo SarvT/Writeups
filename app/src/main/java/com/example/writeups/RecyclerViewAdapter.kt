@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewAdapter(val activity: Activity, val context: Context, val ids:ArrayList<Int>, val writups:ArrayList<String>, val authors:ArrayList<String>, val titles:ArrayList<String>) : RecyclerView.Adapter<RecyclerViewAdapter.RVViewHolder>() {
     class RVViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val id_view = itemView.findViewById<TextView>(R.id.id_txt)
+//        val id_view = itemView.findViewById<TextView>(R.id.id_txt)
         val writup_view = itemView.findViewById<TextView>(R.id.writeup_txt)
         val author_view = itemView.findViewById<TextView>(R.id.author_txt)
         val title_view = itemView.findViewById<TextView>(R.id.title_txt)
@@ -40,7 +40,7 @@ class RecyclerViewAdapter(val activity: Activity, val context: Context, val ids:
 
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.RVViewHolder, position: Int) {
-        holder.id_view.text = ids[position].toString()
+//        holder.id_view.text = ids[position].toString()
         holder.writup_view.text = writups[position]
         holder.author_view.text = authors[position]
         holder.title_view.text = titles[position]

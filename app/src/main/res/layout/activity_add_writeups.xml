@@ -5,51 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddWriteupsActivity"
-    android:padding="18dp">
+    android:padding="18dp"
+    style="@style/Theme.Notes">
 
     <EditText
         android:id="@+id/writeUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="121dp"
+        android:background="#00000000"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
         android:ems="10"
-        android:inputType="text"
+        android:alpha="0.65"
+
+        android:inputType="text|textMultiLine"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="your write up here..."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/authorName"/>
 
     <EditText
         android:id="@+id/authorName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:background="#00000000"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:ems="10"
+        android:alpha="0.55"
         android:inputType="text"
-        android:hint="Author"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/writeUp" />
-
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorName" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Button"
+        android:hint="author"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <EditText
+        android:id="@+id/title"
+        android:background="#00000000"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Title"
+        android:alpha="0.8"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:alpha="0.7"
+        android:src="@drawable/icon_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import java.nio.file.Files.delete
@@ -17,8 +18,8 @@ class UpdateWriteupsActivity : AppCompatActivity() {
         val write_upUpdate:EditText = findViewById(R.id.updateWriteUp)
         val authorUpdate:EditText = findViewById(R.id.updateAuthorName)
         val titleUpdate:EditText = findViewById(R.id.updateTitle)
-        val buttonUpdate:Button = findViewById(R.id.updateButton)
-        val buttonDelete:Button = findViewById(R.id.deleteButton)
+        val buttonUpdate:ImageButton = findViewById(R.id.updateButton)
+        val buttonDelete:ImageButton = findViewById(R.id.deleteButton)
         showExistingData(write_upUpdate, authorUpdate,titleUpdate)
         val id = intent?.getStringExtra("id").toString()
         val db = WriteDBHelper(this)
