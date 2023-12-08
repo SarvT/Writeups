@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMainScreen"
         android:layout_width="409dp"
@@ -27,4 +29,30 @@
         app:layout_constraintBottom_toBottomOf="@+id/recyclerViewMainScreen"
         app:layout_constraintEnd_toEndOf="@+id/recyclerViewMainScreen"
         app:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+    <ImageView
+        android:id="@+id/no_files"
+        android:src="@drawable/no_files"
+        android:visibility="visible"
+        android:alpha="0.5"
+        android:layout_marginTop="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="340dp"
+        android:layout_height="440dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        android:alpha="0.5"
+        android:text="No Files!"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/no_files"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 //import codepurviewbinding.databinding.ActivityMainBinding
 
 import android.view.inputmethod.InputBinding
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,6 +44,13 @@ class MainActivity : AppCompatActivity() {
         val db = WriteDBHelper(this)
         val rvAdapter = RecyclerViewAdapter(this, this, ids, writeups, authors, titles)
         getData(db, ids, writeups, authors,titles)
+        val empty_file:ImageView = findViewById(R.id.no_files)
+    if (writeups.isEmpty()) {
+        empty_file.visibility = View.VISIBLE
+    } else {
+        empty_file.visibility = View.GONE
+
+    }
 
 
 //    LinearLayoutManager(this)
